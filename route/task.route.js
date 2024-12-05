@@ -4,8 +4,7 @@ import Task from '../schema/task.schema.js';
 
 router.get('/read', async (req, res) => {
     try {
-        const id = req.query.id;
-        const response = await Task.findById(id);
+        const response = await Task.find();
         if(!response){
             return res.status(404).send("Book is not found");
         }
